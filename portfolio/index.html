@@ -741,12 +741,12 @@
     </div>
 </div>
 
-           <!-- Project 1: InsightAI -->
+          <!-- Project 5: Student Health Risk Prediction -->
 <div class="project-case-study">
     <div class="project-hero">
         <div class="project-hero-content">
-            <h2>InsightAI</h2>
-            <p>AI-Powered Business Intelligence Platform</p>
+            <h2>Student Health Risk Prediction</h2>
+            <p>Machine Learning-Based Health Classification System</p>
         </div>
     </div>
 
@@ -755,112 +755,157 @@
         <div class="project-section">
             <h3>Project Overview</h3>
             <p>
-                InsightAI is an AI-powered Business Intelligence platform that transforms raw CSV and Excel datasets into actionable business insights. The platform automates data cleaning, validation, KPI generation, forecasting, interactive dashboards, and provides a dataset-aware AI assistant for natural language business queries.
+                Developed a machine learning-based student health risk prediction
+                system that analyzes health and lifestyle-related attributes to
+                classify students into different health-condition categories.
+                The system uses CatBoost for multiclass classification and
+                Balanced Accuracy for performance evaluation.
             </p>
 
             <h4>Problem Statement</h4>
             <p>
-                Organizations often struggle to convert raw business data into meaningful insights due to poor data quality, manual analysis, and lack of analytical expertise. InsightAI simplifies this process by automating data preparation, visualization, forecasting, and business intelligence reporting.
+                Predicting student health conditions from multiple lifestyle and
+                health-related factors can be challenging because the dataset
+                contains both numerical and categorical features along with
+                missing values. The project aims to build a reliable machine
+                learning model capable of classifying students into appropriate
+                health-risk categories.
             </p>
 
             <h4>Objectives</h4>
             <ul>
-                <li>Automate dataset cleaning and validation.</li>
-                <li>Generate interactive dashboards and KPI analytics.</li>
-                <li>Predict future sales trends using Machine Learning.</li>
-                <li>Develop a dataset-aware AI assistant for business queries.</li>
-                <li>Generate executive reports in PDF and Excel formats.</li>
+                <li>Develop a machine learning model for student health classification.</li>
+                <li>Analyze health and lifestyle-related student attributes.</li>
+                <li>Handle missing numerical and categorical data effectively.</li>
+                <li>Compare Random Forest with CatBoost classification.</li>
+                <li>Evaluate the model using Balanced Accuracy.</li>
+                <li>Generate health-condition predictions for unseen student data.</li>
             </ul>
         </div>
 
         <div class="project-section">
-
             <h4>Key Features</h4>
-
             <ul class="feature-list">
+                <li>
+                    <strong>Multiclass Classification:</strong>
+                    Classifies students as at-risk, unhealthy, or fit.
+                </li>
 
-                <li><strong>Dataset Upload:</strong> Supports CSV, XLS and XLSX files.</li>
+                <li>
+                    <strong>Data Preprocessing:</strong>
+                    Handles missing numerical and categorical values before
+                    model training.
+                </li>
 
-                <li><strong>Automated Data Cleaning:</strong> Missing value handling, duplicate removal, outlier detection and quality scoring.</li>
+                <li>
+                    <strong>Numerical Feature Analysis:</strong>
+                    Uses features such as BMI, heart rate, sleep duration,
+                    calorie expenditure, step count, exercise duration,
+                    and water intake.
+                </li>
 
-                <li><strong>Interactive Dashboard:</strong> KPI cards, sales trends, customer insights and regional analytics.</li>
+                <li>
+                    <strong>Categorical Feature Handling:</strong>
+                    Processes features such as diet type, stress level,
+                    sleep quality, physical activity level, smoking/alcohol
+                    habits, and gender.
+                </li>
 
-                <li><strong>Sales Forecasting:</strong> Linear Regression model for predicting future business trends.</li>
+                <li>
+                    <strong>Random Forest Baseline:</strong>
+                    Uses Random Forest as a baseline ensemble classification model.
+                </li>
 
-                <li><strong>AI Assistant:</strong> Dataset-aware assistant capable of answering business questions using real-time Pandas analysis.</li>
+                <li>
+                    <strong>CatBoost Classification:</strong>
+                    Uses CatBoost gradient boosting to handle tabular data
+                    and categorical features effectively.
+                </li>
 
-                <li><strong>Executive Reports:</strong> Export business reports in PDF and Excel formats.</li>
-
-                <li><strong>Secure Authentication:</strong> User login, registration and role-based access.</li>
-
+                <li>
+                    <strong>Balanced Accuracy:</strong>
+                    Evaluates model performance by giving equal importance
+                    to each health-condition class.
+                </li>
             </ul>
 
             <h4>Technology Stack</h4>
-
             <div class="tech-stack">
                 <span class="tech-badge">Python</span>
-                <span class="tech-badge">Flask</span>
                 <span class="tech-badge">Pandas</span>
                 <span class="tech-badge">NumPy</span>
                 <span class="tech-badge">Scikit-learn</span>
-                <span class="tech-badge">SQLite</span>
-                <span class="tech-badge">HTML</span>
-                <span class="tech-badge">CSS</span>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">Plotly</span>
+                <span class="tech-badge">CatBoost</span>
+                <span class="tech-badge">Machine Learning</span>
+                <span class="tech-badge">Kaggle</span>
             </div>
-
         </div>
 
     </div>
 
-    <div class="detail-item">
+    <div class="project-details">
 
-        <h4>Challenges & Solutions</h4>
+        <div class="detail-item">
+            <h4>System Capabilities</h4>
+            <ul>
+                <li>Student health-condition prediction</li>
+                <li>Multiclass classification</li>
+                <li>Numerical and categorical feature processing</li>
+                <li>Missing-value handling</li>
+                <li>Random Forest baseline modeling</li>
+                <li>CatBoost-based classification</li>
+                <li>Balanced Accuracy evaluation</li>
+                <li>Prediction on unseen test data</li>
+            </ul>
+        </div>
 
-        <ul>
+        <div class="detail-item">
+            <h4>Challenges & Solutions</h4>
+            <ul>
+                <li>
+                    <strong>Missing Numerical Values:</strong>
+                    Used median imputation to fill missing numerical values
+                    while reducing the influence of potential outliers.
+                </li>
 
-            <li><strong>Data Quality:</strong> Built an automated pipeline for missing value handling, duplicate removal, type conversion, and outlier detection.</li>
+                <li>
+                    <strong>Missing Categorical Values:</strong>
+                    Replaced missing categorical values with an
+                    <code>Unknown</code> category.
+                </li>
 
-            <li><strong>Natural Language Queries:</strong> Developed a dataset-aware AI assistant using intent detection and dynamic Pandas-based analytics.</li>
+                <li>
+                    <strong>Categorical Feature Compatibility:</strong>
+                    Converted categorical values into the appropriate string
+                    format so that CatBoost could process them correctly.
+                </li>
 
-            <li><strong>Business Forecasting:</strong> Implemented Linear Regression to generate short-term sales predictions and business insights.</li>
+                <li>
+                    <strong>Model Selection:</strong>
+                    Compared a Random Forest baseline with CatBoost and
+                    selected CatBoost based on its better validation performance.
+                </li>
 
-        </ul>
-
-    </div>
-
-    <div class="detail-item">
-
-        <h4>Future Scope</h4>
-
-        <ul>
-
-            <li>Support advanced forecasting models such as ARIMA and Prophet.</li>
-
-            <li>Cloud deployment using AWS or Microsoft Azure.</li>
-
-            <li>Role-based dashboards for multiple business departments.</li>
-
-            <li>Semantic AI assistant using Large Language Models and Retrieval-Augmented Generation (RAG).</li>
-
-            <li>Real-time anomaly detection and intelligent business alerts.</li>
-
-        </ul>
-
-    </div>
-
-    <div class="detail-item">
-
-        <h4>Lessons Learned</h4>
-
-        <p>
-            This project strengthened my knowledge of Business Intelligence, data preprocessing, exploratory data analysis, machine learning, Flask development, authentication, report generation, and designing AI-powered applications that solve real-world business problems.
-        </p>
-
-    </div>
-
+                <li>
+                    <strong>Class Evaluation:</strong>
+                    Used Balanced Accuracy instead of relying only on
+                    ordinary accuracy so that each health-condition class
+                    received equal importance.
+                </li>
+            </ul>
+        
+        </div>
+<div class="detail-item">
+    <h4>Results</h4>
+<p>
+    The CatBoost model achieved a Balanced Accuracy of approximately
+    <strong>87.8%</strong> on the validation dataset, outperforming the
+    Random Forest baseline.
+</p>
 </div>
+    </div>
+</div>
+
 
             <!-- Project 2: UPI Fraud Detection -->
 <div class="project-case-study">
