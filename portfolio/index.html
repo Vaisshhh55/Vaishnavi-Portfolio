@@ -1063,10 +1063,8 @@
 
 
     <!-- Technology Stack -->
-    <div class="project-section">
-        <h3>Technology Stack</h3>
-
-        <div class="tech-stack">
+    <h4>Technology Stack</h4>
+            <div class="tech-stack">
 
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Flask</span>
@@ -1093,73 +1091,10 @@
             <span class="tech-tag">Data Analytics</span>
 
         </div>
-    </div>
 
 
-    <!-- Project Workflow -->
-    <div class="project-section">
-        <h3>Project Workflow</h3>
 
-        <p>
-            The system follows an end-to-end transaction risk assessment
-            pipeline:
-        </p>
-
-        <ol>
-            <li>User submits a payment transaction.</li>
-
-            <li>
-                The Express backend validates the transaction data.
-            </li>
-
-            <li>
-                Transaction features are sent to the Python Flask ML
-                service.
-            </li>
-
-            <li>
-                Logistic Regression, Random Forest, and XGBoost generate
-                fraud predictions and probabilities.
-            </li>
-
-            <li>
-                Isolation Forest performs independent anomaly detection.
-            </li>
-
-            <li>
-                Model predictions are combined using ensemble voting and
-                probability averaging.
-            </li>
-
-            <li>
-                The fraud probability is converted into a 0-100 risk score.
-            </li>
-
-            <li>
-                SHAP generates feature-level explanations for the
-                prediction.
-            </li>
-
-            <li>
-                The transaction receives a LOW, MEDIUM, HIGH, or CRITICAL
-                risk band.
-            </li>
-
-            <li>
-                A recommended action is generated based on the risk level.
-            </li>
-
-            <li>
-                HIGH and CRITICAL transactions can be routed to human
-                reviewers.
-            </li>
-
-            <li>
-                Transaction information is stored and reflected in
-                analytics dashboards.
-            </li>
-        </ol>
-    </div>
+   
 
 
     <!-- Risk Classification -->
@@ -1310,40 +1245,7 @@
     </div>
 
 
-    <!-- Dataset & Evaluation -->
-    <div class="project-section">
-        <h3>Dataset & Evaluation</h3>
-
-        <p>
-            The development system uses deterministic synthetic
-            classification data generated using
-            <strong>scikit-learn's make_classification</strong>.
-            The dataset contains 2,000 synthetic development samples
-            with transaction-related features.
-        </p>
-
-        <p>
-            The main features include transaction amount, transaction
-            frequency, location anomaly, and time anomaly.
-        </p>
-
-        <p>
-            The project evaluates models using Precision, Recall, F1-score,
-            ROC-AUC, PR-AUC, and confusion matrices. PR-AUC is particularly
-            useful for fraud detection because fraud is generally the
-            minority class.
-        </p>
-
-        <p>
-            The development experiment selected XGBoost based on PR-AUC.
-            Its held-out development result was approximately
-            <strong>0.9094 PR-AUC</strong>. These results are based on
-            synthetic development data and should not be interpreted as
-            production banking performance.
-        </p>
-    </div>
-
-
+    
     <!-- Results -->
     <div class="project-section">
         <h3>Results</h3>
