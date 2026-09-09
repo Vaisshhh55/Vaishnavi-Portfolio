@@ -907,109 +907,556 @@
 </div>
 
 
-            <!-- Project 2: UPI Fraud Detection -->
+           <!-- Project: AI Risk Manager - UPI-Style Payment Risk Prototype -->
 <div class="project-case-study">
+
     <div class="project-hero">
         <div class="project-hero-content">
-            <h2>UPI Fraud Detection System</h2>
-            <p>AI & Machine Learning Based Financial Fraud Detection</p>
+            <h2>AI Risk Manager</h2>
+            <p>UPI-Style Payment Risk & Fraud Assessment System</p>
         </div>
     </div>
 
     <div class="project-grid-2">
 
+        <!-- Project Overview -->
         <div class="project-section">
-
             <h3>Project Overview</h3>
 
             <p>
-                Developed an intelligent UPI fraud detection system that analyzes
-                transaction details using Machine Learning to identify fraudulent
-                transactions. The system assists financial institutions by detecting
-                suspicious activities, reducing financial losses, and improving
-                transaction security through predictive analytics.
+                AI Risk Manager is a full-stack decision-support prototype
+                designed to assess risk in UPI-style digital payment
+                transactions. The system combines multiple machine learning
+                models, anomaly detection, explainable AI, risk scoring,
+                and human review workflows.
             </p>
-
-            <h4>My Role</h4>
 
             <p>
-                Performed data preprocessing, feature engineering, trained Machine
-                Learning models, evaluated prediction performance, and developed an
-                interactive interface to visualize fraud detection results.
+                For every transaction, the system generates a fraud
+                probability, converts it into a 0-100 risk score, assigns
+                a risk band, identifies model-backed risk factors, and
+                recommends an appropriate action.
             </p>
 
-            <h4>Objectives</h4>
-
-            <ul>
-                <li>Detect fraudulent UPI transactions using Machine Learning.</li>
-                <li>Improve transaction security through predictive analysis.</li>
-                <li>Reduce false fraud detection using data-driven models.</li>
-                <li>Provide transaction risk analysis for decision making.</li>
-                <li>Visualize fraud statistics using interactive charts.</li>
-            </ul>
-
+            <p>
+                The project is a prototype and does not connect to UPI,
+                Razorpay, banks, or real payment rails. It does not block
+                real payments.
+            </p>
         </div>
 
+        <!-- Problem Statement -->
         <div class="project-section">
+            <h3>Problem Statement</h3>
 
-            <h4>Key Features</h4>
+            <p>
+                Digital payment platforms process large numbers of
+                transactions, making it difficult for risk teams to
+                manually investigate every transaction.
+            </p>
 
-            <ul class="feature-list">
-                <li><strong>Fraud Prediction:</strong> Classifies transactions as genuine or fraudulent.</li>
-                <li><strong>Data Preprocessing:</strong> Cleaning, encoding and feature selection.</li>
-                <li><strong>Machine Learning Model:</strong> Model training and prediction using historical transaction data.</li>
-                <li><strong>Risk Analysis:</strong> Identifies suspicious transaction patterns.</li>
-                <li><strong>Interactive Dashboard:</strong> Displays fraud trends and prediction results.</li>
-                <li><strong>Performance Evaluation:</strong> Accuracy, Precision, Recall and F1-Score analysis.</li>
-            </ul>
+            <p>
+                A simple fraud or legitimate prediction is not sufficient
+                for risk management because reviewers also need to
+                understand the probability of fraud, severity of the risk,
+                reasons behind the assessment, and recommended next action.
+            </p>
 
-            <h4>Technology Stack</h4>
-
-            <div class="tech-stack">
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Pandas</span>
-                <span class="tech-badge">NumPy</span>
-                <span class="tech-badge">Scikit-learn</span>
-                <span class="tech-badge">Matplotlib</span>
-                <span class="tech-badge">Jupyter Notebook</span>
-            </div>
-
+            <p>
+                This project addresses this problem by combining
+                multi-model fraud assessment, anomaly detection,
+                explainability, risk prioritization, and human-in-the-loop
+                review.
+            </p>
         </div>
 
     </div>
 
+
+    <!-- Objectives -->
     <div class="project-details">
 
         <div class="detail-item">
-
-            <h4>Machine Learning Workflow</h4>
+            <h4>Objectives</h4>
 
             <ul>
-                <li>Data Collection & Cleaning</li>
-                <li>Feature Engineering</li>
-                <li>Data Preprocessing</li>
-                <li>Model Training & Testing</li>
-                <li>Fraud Prediction</li>
-                <li>Performance Evaluation</li>
-                <li>Visualization of Results</li>
+                <li>Predict the probability of transaction fraud.</li>
+                <li>Combine multiple supervised machine learning models.</li>
+                <li>Detect unusual transactions using Isolation Forest.</li>
+                <li>Generate a 0-100 transaction risk score.</li>
+                <li>Assign LOW, MEDIUM, HIGH, or CRITICAL risk bands.</li>
+                <li>Provide explainable AI-based risk factors using SHAP.</li>
+                <li>Recommend appropriate actions based on risk level.</li>
+                <li>Route HIGH and CRITICAL transactions for human review.</li>
+                <li>Maintain transaction audit information and analytics.</li>
             </ul>
+        </div>
+
+
+        <!-- Key Features -->
+        <div class="detail-item">
+            <h4>Key Features</h4>
+
+            <ul>
+                <li>
+                    <strong>Ensemble Fraud Detection:</strong>
+                    Logistic Regression, Random Forest, and XGBoost
+                    contribute to the fraud assessment.
+                </li>
+
+                <li>
+                    <strong>Majority Voting:</strong>
+                    At least two supervised models must agree for a fraud
+                    decision.
+                </li>
+
+                <li>
+                    <strong>Probability-Based Risk Score:</strong>
+                    Fraud probability is converted into a 0-100 risk score.
+                </li>
+
+                <li>
+                    <strong>Anomaly Detection:</strong>
+                    Isolation Forest identifies structurally unusual
+                    transactions.
+                </li>
+
+                <li>
+                    <strong>SHAP Explainability:</strong>
+                    Provides feature-level contributions explaining
+                    transaction risk.
+                </li>
+
+                <li>
+                    <strong>Risk Bands:</strong>
+                    Transactions are classified as LOW, MEDIUM, HIGH,
+                    or CRITICAL.
+                </li>
+
+                <li>
+                    <strong>Human-in-the-Loop:</strong>
+                    HIGH and CRITICAL cases can be routed to an admin
+                    review queue.
+                </li>
+
+                <li>
+                    <strong>Risk Analytics:</strong>
+                    Provides fraud patterns, user risk profiles,
+                    time-series analysis, and model insights.
+                </li>
+
+                <li>
+                    <strong>Idempotent Transactions:</strong>
+                    Idempotency-Key prevents duplicate transaction
+                    creation when the same request is repeated.
+                </li>
+
+                <li>
+                    <strong>AI Service Monitoring:</strong>
+                    Tracks ML availability, latency, model versions,
+                    and review backlog.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Technology Stack -->
+    <div class="project-section">
+        <h3>Technology Stack</h3>
+
+        <div class="tech-stack">
+
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">Random Forest</span>
+            <span class="tech-tag">Logistic Regression</span>
+            <span class="tech-tag">Isolation Forest</span>
+            <span class="tech-tag">SHAP</span>
+
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Axios</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express.js</span>
+
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">JWT</span>
+            <span class="tech-tag">bcryptjs</span>
+
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Fraud Detection</span>
+            <span class="tech-tag">Explainable AI</span>
+            <span class="tech-tag">Data Analytics</span>
 
         </div>
+    </div>
+
+
+    <!-- Project Workflow -->
+    <div class="project-section">
+        <h3>Project Workflow</h3>
+
+        <p>
+            The system follows an end-to-end transaction risk assessment
+            pipeline:
+        </p>
+
+        <ol>
+            <li>User submits a payment transaction.</li>
+
+            <li>
+                The Express backend validates the transaction data.
+            </li>
+
+            <li>
+                Transaction features are sent to the Python Flask ML
+                service.
+            </li>
+
+            <li>
+                Logistic Regression, Random Forest, and XGBoost generate
+                fraud predictions and probabilities.
+            </li>
+
+            <li>
+                Isolation Forest performs independent anomaly detection.
+            </li>
+
+            <li>
+                Model predictions are combined using ensemble voting and
+                probability averaging.
+            </li>
+
+            <li>
+                The fraud probability is converted into a 0-100 risk score.
+            </li>
+
+            <li>
+                SHAP generates feature-level explanations for the
+                prediction.
+            </li>
+
+            <li>
+                The transaction receives a LOW, MEDIUM, HIGH, or CRITICAL
+                risk band.
+            </li>
+
+            <li>
+                A recommended action is generated based on the risk level.
+            </li>
+
+            <li>
+                HIGH and CRITICAL transactions can be routed to human
+                reviewers.
+            </li>
+
+            <li>
+                Transaction information is stored and reflected in
+                analytics dashboards.
+            </li>
+        </ol>
+    </div>
+
+
+    <!-- Risk Classification -->
+    <div class="project-details">
 
         <div class="detail-item">
+            <h4>Risk Classification</h4>
 
-            <h4>Challenges & Learning</h4>
+            <ul>
+                <li><strong>LOW:</strong> 0-30</li>
+                <li><strong>MEDIUM:</strong> 31-60</li>
+                <li><strong>HIGH:</strong> 61-80</li>
+                <li><strong>CRITICAL:</strong> 81-100</li>
+            </ul>
 
             <p>
-                Gained practical experience in Machine Learning model development,
-                handling imbalanced datasets, feature engineering, model evaluation,
-                and fraud pattern analysis. Improved skills in Python, data analytics,
-                predictive modeling, and solving real-world financial security
-                problems.
+                The risk score is calculated as:
             </p>
 
+            <p>
+                <strong>
+                    Risk Score = round(Fraud Probability × 100)
+                </strong>
+            </p>
         </div>
 
+
+        <!-- ML Models -->
+        <div class="detail-item">
+            <h4>Machine Learning Models</h4>
+
+            <ul>
+                <li>
+                    <strong>Logistic Regression:</strong>
+                    Fast and interpretable baseline model.
+                </li>
+
+                <li>
+                    <strong>Random Forest:</strong>
+                    Captures non-linear patterns and feature interactions.
+                </li>
+
+                <li>
+                    <strong>XGBoost:</strong>
+                    Gradient boosting model used for strong tabular-data
+                    performance.
+                </li>
+
+                <li>
+                    <strong>Isolation Forest:</strong>
+                    Unsupervised anomaly detection for unusual transaction
+                    patterns.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- System Capabilities -->
+    <div class="project-details">
+
+        <div class="detail-item">
+            <h4>System Capabilities</h4>
+
+            <ul>
+                <li>Transaction fraud probability prediction</li>
+                <li>Multi-model ensemble assessment</li>
+                <li>Anomaly detection</li>
+                <li>Explainable AI with SHAP</li>
+                <li>Risk scoring and risk bands</li>
+                <li>Fraud pattern analytics</li>
+                <li>Time-series fraud analysis</li>
+                <li>User risk profiling</li>
+                <li>Model performance comparison</li>
+                <li>Admin review queue</li>
+                <li>Transaction audit trail</li>
+                <li>ML service health monitoring</li>
+            </ul>
+        </div>
+
+
+        <!-- Challenges & Solutions -->
+        <div class="detail-item">
+            <h4>Challenges & Solutions</h4>
+
+            <ul>
+                <li>
+                    <strong>Challenge:</strong> A single model may produce
+                    unreliable decisions.
+                    <br>
+                    <strong>Solution:</strong> Combined Logistic Regression,
+                    Random Forest, and XGBoost using ensemble voting.
+                </li>
+
+                <li>
+                    <strong>Challenge:</strong> Supervised models may miss
+                    unusual transaction patterns.
+                    <br>
+                    <strong>Solution:</strong> Added Isolation Forest for
+                    independent anomaly detection.
+                </li>
+
+                <li>
+                    <strong>Challenge:</strong> Fraud predictions can be
+                    difficult to interpret.
+                    <br>
+                    <strong>Solution:</strong> Integrated SHAP-based
+                    feature contributions.
+                </li>
+
+                <li>
+                    <strong>Challenge:</strong> Different transactions
+                    require different levels of attention.
+                    <br>
+                    <strong>Solution:</strong> Created four risk bands and
+                    recommended actions.
+                </li>
+
+                <li>
+                    <strong>Challenge:</strong> Duplicate transaction
+                    requests can create inconsistent records.
+                    <br>
+                    <strong>Solution:</strong> Implemented Idempotency-Key
+                    based transaction processing.
+                </li>
+
+                <li>
+                    <strong>Challenge:</strong> ML service failures can
+                    affect transaction assessment.
+                    <br>
+                    <strong>Solution:</strong> Implemented explicit AI
+                    availability handling and HTTP 503 responses when
+                    the ML artifacts are unavailable.
+                </li>
+
+                <li>
+                    <strong>Challenge:</strong> Fraud thresholds involve
+                    precision and recall trade-offs.
+                    <br>
+                    <strong>Solution:</strong> Added held-out threshold
+                    policy analysis instead of assuming 0.5 is universally
+                    optimal.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Dataset & Evaluation -->
+    <div class="project-section">
+        <h3>Dataset & Evaluation</h3>
+
+        <p>
+            The development system uses deterministic synthetic
+            classification data generated using
+            <strong>scikit-learn's make_classification</strong>.
+            The dataset contains 2,000 synthetic development samples
+            with transaction-related features.
+        </p>
+
+        <p>
+            The main features include transaction amount, transaction
+            frequency, location anomaly, and time anomaly.
+        </p>
+
+        <p>
+            The project evaluates models using Precision, Recall, F1-score,
+            ROC-AUC, PR-AUC, and confusion matrices. PR-AUC is particularly
+            useful for fraud detection because fraud is generally the
+            minority class.
+        </p>
+
+        <p>
+            The development experiment selected XGBoost based on PR-AUC.
+            Its held-out development result was approximately
+            <strong>0.9094 PR-AUC</strong>. These results are based on
+            synthetic development data and should not be interpreted as
+            production banking performance.
+        </p>
+    </div>
+
+
+    <!-- Results -->
+    <div class="project-section">
+        <h3>Results</h3>
+
+        <p>
+            The project successfully demonstrates an end-to-end AI-based
+            payment risk assessment workflow. The system combines
+            supervised ensemble models with anomaly detection and
+            explainability to produce actionable transaction risk
+            assessments.
+        </p>
+
+        <p>
+            In the synthetic development evaluation, XGBoost achieved
+            approximately <strong>0.9094 PR-AUC</strong>, while Random
+            Forest achieved approximately <strong>0.8864 PR-AUC</strong>
+            and Logistic Regression achieved approximately
+            <strong>0.6880 PR-AUC</strong>.
+        </p>
+
+        <p>
+            These are synthetic development results and do not represent
+            real UPI or production fraud-detection performance.
+        </p>
+    </div>
+
+
+    <!-- Security -->
+    <div class="project-section">
+        <h3>Security Features</h3>
+
+        <ul>
+            <li>JWT-based authentication</li>
+            <li>Password hashing using bcryptjs</li>
+            <li>Role-based admin authorization</li>
+            <li>Admin-only analytics endpoints</li>
+            <li>Request validation and size limits</li>
+            <li>Basic authentication and transaction rate limiting</li>
+            <li>Environment-based secrets</li>
+            <li>Explicit ML service availability handling</li>
+        </ul>
+    </div>
+
+
+    <!-- What I Learned -->
+    <div class="project-section">
+        <h3>What I Learned</h3>
+
+        <p>
+            Through this project, I gained practical experience in
+            developing an end-to-end machine learning application rather
+            than building only an isolated ML model.
+        </p>
+
+        <ul>
+            <li>
+                Learned how to combine multiple machine learning models
+                into an ensemble risk assessment system.
+            </li>
+
+            <li>
+                Gained practical experience with XGBoost, Random Forest,
+                Logistic Regression, and Isolation Forest.
+            </li>
+
+            <li>
+                Learned how SHAP can be used to explain individual
+                machine learning predictions.
+            </li>
+
+            <li>
+                Improved my understanding of fraud detection metrics,
+                especially Precision, Recall, F1-score, ROC-AUC, and
+                PR-AUC.
+            </li>
+
+            <li>
+                Learned how machine learning models can be integrated
+                into a Flask API and consumed by a backend application.
+            </li>
+
+            <li>
+                Gained experience with React, Express, JWT authentication,
+                MongoDB, and API integration.
+            </li>
+
+            <li>
+                Learned the importance of human-in-the-loop systems for
+                high-risk automated decisions.
+            </li>
+
+            <li>
+                Learned that synthetic model performance should not be
+                presented as real-world banking performance.
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Future Enhancements -->
+    <div class="project-section">
+        <h3>Future Enhancements</h3>
+
+        <ul>
+            <li>Real-time transaction streaming using Kafka or RabbitMQ</li>
+            <li>Real historical payment data integration</li>
+            <li>Advanced deep learning models</li>
+            <li>Automatic model retraining pipeline</li>
+            <li>Real-time SMS and email alerts</li>
+            <li>Advanced SHAP visualization dashboards</li>
+            <li>A/B testing framework for fraud models</li>
+            <li>Docker-based deployment</li>
+        </ul>
     </div>
 
 </div>
